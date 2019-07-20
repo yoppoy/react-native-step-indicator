@@ -1,19 +1,41 @@
 {
-  "name": "react-native-step-indicator",
-  "version": "0.0.9",
+  "_from": "git+https://github.com/yoppoy/react-native-step-indicator.git",
+  "_id": "react-native-step-indicator@0.0.9",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-step-indicator",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/yoppoy/react-native-step-indicator.git",
+    "rawSpec": "https://github.com/yoppoy/react-native-step-indicator.git",
+    "saveSpec": "git+https://github.com/yoppoy/react-native-step-indicator.git",
+    "fetchSpec": "https://github.com/yoppoy/react-native-step-indicator.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/yoppoy/react-native-step-indicator.git#a308720d02a633a0ae49148d28f5c996c92c6ac6",
+  "_spec": "https://github.com/yoppoy/react-native-step-indicator.git",
+  "_where": "/Users/yanpoinssot/Work/smartlock",
+  "author": {
+    "name": "Arkit Vora"
+  },
+  "bugs": {
+    "url": "https://github.com/24ark/react-native-step-indicator/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "deprecated": false,
   "description": "A simple react-native implementation of step indicator widget compatible with the ViewPager, ListView and Flatlist",
-  "main": "StepIndicator.js",
-  "types": "index.d.ts",
   "directories": {
     "example": "example"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/24ark/react-native-step-indicator.git"
-  },
+  "homepage": "https://github.com/24ark/react-native-step-indicator#readme",
   "keywords": [
     "react-component",
     "ios",
@@ -24,13 +46,16 @@
     "scrollview",
     "listview"
   ],
-  "author": "Arkit Vora",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/24ark/react-native-step-indicator/issues"
+  "main": "StepIndicator.js",
+  "name": "react-native-step-indicator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/24ark/react-native-step-indicator.git"
   },
-  "homepage": "https://github.com/24ark/react-native-step-indicator#readme",
-  "dependencies": {
-    "prop-types": "^15.6.0"
-  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "index.d.ts",
+  "version": "0.0.9"
 }

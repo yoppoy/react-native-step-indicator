@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View,Text,StyleSheet, Animated, TouchableWithoutFeedback } from 'react-native';
+import {View, Text, StyleSheet, Animated, TouchableWithoutFeedback, Dimensions} from 'react-native';
 
 const STEP_STATUS = {
   CURRENT:'current',
@@ -91,9 +91,9 @@ export default class StepIndicator extends Component {
         backgroundColor:this.state.customStyles.separatorUnFinishedColor,
         position:'absolute',
         left:(this.state.width - this.state.customStyles.separatorStrokeWidth)/2,
-        top:this.state.height/(2*stepCount),
-        bottom:this.state.height/(2*stepCount),
-        width: this.state.customStyles.separatorStrokeUnfinishedWidth == 0 ? 
+        top:this.state.height/(4*stepCount),
+        bottom:this.state.height/(4*stepCount),
+        width: this.state.customStyles.separatorStrokeUnfinishedWidth == 0 ?
           this.state.customStyles.separatorStrokeWidth :
           this.state.customStyles.separatorStrokeUnfinishedWidth
       }
@@ -105,7 +105,7 @@ export default class StepIndicator extends Component {
         top:(this.state.height - this.state.customStyles.separatorStrokeWidth)/2,
         left:this.state.width/(2*stepCount),
         right:this.state.width/(2*stepCount),
-        height: this.state.customStyles.separatorStrokeUnfinishedWidth == 0 ? 
+        height: this.state.customStyles.separatorStrokeUnfinishedWidth == 0 ?
           this.state.customStyles.separatorStrokeWidth :
           this.state.customStyles.separatorStrokeUnfinishedWidth
       }
@@ -134,7 +134,7 @@ export default class StepIndicator extends Component {
         left:(this.state.width - this.state.customStyles.separatorStrokeWidth)/2,
         top:this.state.height/(2*stepCount),
         bottom:this.state.height/(2*stepCount),
-        width:this.state.customStyles.separatorStrokeFinishedWidth == 0 ? 
+        width:this.state.customStyles.separatorStrokeFinishedWidth == 0 ?
           this.state.customStyles.separatorStrokeWidth :
           this.state.customStyles.separatorStrokeFinishedWidth,
         height:this.progressAnim
@@ -147,7 +147,7 @@ export default class StepIndicator extends Component {
         top:(this.state.height - this.state.customStyles.separatorStrokeWidth)/2,
         left:this.state.width/(2*stepCount),
         right:this.state.width/(2*stepCount),
-        height:this.state.customStyles.separatorStrokeFinishedWidth == 0 ? 
+        height:this.state.customStyles.separatorStrokeFinishedWidth == 0 ?
           this.state.customStyles.separatorStrokeWidth :
           this.state.customStyles.separatorStrokeFinishedWidth,
         width:this.progressAnim
@@ -196,7 +196,7 @@ export default class StepIndicator extends Component {
       return(
         <View style={[styles.stepLabelsContainer,
           direction === 'vertical' ? {flexDirection: 'column', paddingHorizontal:4} : {flexDirection: 'row', paddingVertical:4},
-          {alignItems: this.customStyles.labelAlign}
+          {alignItems: this.state.customStyles.labelAlign}
         ]}>
           {labelViews}
         </View>
@@ -218,7 +218,7 @@ export default class StepIndicator extends Component {
             width:this.sizeAnim,
             borderRadius:this.borderRadiusAnim
           };
-          indicatorLabelStyle = { fontSize: this.state.customStyles.currentStepIndicatorLabelFontSize, color: this.state.customStyles.stepIndicatorLabelCurrentColor };
+          indicatorLabelStyle = { fontSize: this.state.customStyles.currentStepIndicatorLabelFontSize, fontWeight: 'bold', color: this.state.customStyles.stepIndicatorLabelCurrentColor };
 
           break;
         }
@@ -244,7 +244,7 @@ export default class StepIndicator extends Component {
             width:this.state.customStyles.stepIndicatorSize,
             borderRadius:(this.state.customStyles.stepIndicatorSize) / 2
           };
-          indicatorLabelStyle = {overflow: 'hidden', fontSize: this.state.customStyles.stepIndicatorLabelFontSize, color: this.state.customStyles.stepIndicatorLabelUnFinishedColor };
+          indicatorLabelStyle = {overflow: 'hidden', fontSize: this.state.customStyles.stepIndicatorLabelFontSize, fontWeight: 'bold', color: this.state.customStyles.stepIndicatorLabelUnFinishedColor };
           break;
         }
         default:
@@ -302,6 +302,7 @@ export default class StepIndicator extends Component {
 
   }
 
+  let SCREEN_WIDTH = Dimensions.get("window").width;
   const styles =  StyleSheet.create({
     container: {
       backgroundColor:'transparent'
@@ -310,7 +311,8 @@ export default class StepIndicator extends Component {
       flexDirection:'row',
       alignItems:'center',
       justifyContent:'space-around',
-      backgroundColor:'transparent'
+      backgroundColor:'transparent',
+      width: 200
     },
     stepLabelsContainer: {
       justifyContent:'space-around'
@@ -334,7 +336,7 @@ export default class StepIndicator extends Component {
     stepLabelItem: {
       flex:1,
       alignItems:'center',
-      justifyContent:'center'
+      justifyContent:'center',
     }
   });
 
